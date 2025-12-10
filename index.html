@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gallery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background-color: #f5f5f5;
+      color: #222;
+    }
+
+    header {
+      padding: 1.5rem 1rem;
+      text-align: center;
+      background-color: #ffffff;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    header h1 {
+      margin: 0 0 0.25rem 0;
+      font-size: 1.75rem;
+    }
+
+    header p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: #666666;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 1.5rem auto 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .gallery-item {
+      background-color: #ffffff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+      transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.09);
+    }
+
+    .gallery-item img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .caption {
+      padding: 0.55rem 0.75rem 0.7rem 0.75rem;
+      font-size: 0.9rem;
+      color: #444444;
+    }
+
+    .caption span {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.1rem;
+    }
+
+    .caption small {
+      display: block;
+      font-size: 0.8rem;
+      color: #777777;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem 0 1.5rem 0;
+      font-size: 0.8rem;
+      color: #999999;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Image Gallery</h1>
+    <p>Images are loaded from the <code>figures/</code> directory.</p>
+  </header>
+
+  <main>
+    <div class="gallery">
+      <!-- Item 1 -->
+      <figure class="gallery-item">
+        <img src="figures/pic1.jpg" alt="Sample image 1" />
+        <figcaption class="caption">
+          <span>Sample image 1</span>
+          <small>Short description for pic1.</small>
+        </figcaption>
+      </figure>
+
+      <!-- Item 2 -->
+      <figure class="gallery-item">
+        <img src="figures/pic2.jpg" alt="Sample image 2" />
+        <figcaption class="caption">
+          <span>Sample image 2</span>
+          <small>Short description for pic2.</small>
+        </figcaption>
+      </figure>
+
+      <!-- Item 3 -->
+      <figure class="gallery-item">
+        <img src="figures/pic3.jpg" alt="Sample image 3" />
+        <figcaption class="caption">
+          <span>Sample image 3</span>
+          <small>Short description for pic3.</small>
+        </figcaption>
+      </figure>
+
+      <!-- You can copy this block and change filenames and captions -->
+      <!--
+      <figure class="gallery-item">
+        <img src="figures/your_image_name.jpg" alt="Description" />
+        <figcaption class="caption">
+          <span>Title</span>
+          <small>Short description.</small>
+        </figcaption>
+      </figure>
+      -->
+    </div>
+  </main>
+
+  <footer>
+    Gallery &copy; 2025
+  </footer>
+</body>
+</html>
