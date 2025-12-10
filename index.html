@@ -68,8 +68,11 @@
     /* No border/padding for landscape to avoid white edges */
     .gallery-item.landscape img {
       padding: 0;
+      margin: 0;
       background: transparent;
-      min-height: auto;
+      width: auto;
+      max-width: 100%;
+      height: auto;
     }
 
     @media (max-width: 600px) {
