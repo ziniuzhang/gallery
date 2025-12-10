@@ -39,7 +39,7 @@
 
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 0.75rem;
     }
 
@@ -59,6 +59,8 @@
 
     .gallery-item.landscape {
       grid-column: span 2;
+      max-width: 1000px;
+      margin: 0 auto;
     }
 
     @media (max-width: 600px) {
@@ -74,7 +76,7 @@
     }
     
     .gallery-item:not(.landscape) img {
-      min-height: 350px;
+      min-height: 380px;
       object-fit: cover;
     }
 
@@ -144,7 +146,7 @@
 <body>
   <header>
     <h1>Image Gallery</h1>
-    <p>I have visited 32 cities in China and lived in 5 of them for more than 1 year.</p>
+    <p>I have visited 32 cities in China and lived in 5 of them for more than 1 year. I have many beautiful memories in these cities. Also, I have many friends during my journey, especially during my college years. I'm greatly appreciate the journey and the people I met along the way. I'm nothing without them.</p>
   </header>
   <main>
 
