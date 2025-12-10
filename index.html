@@ -150,7 +150,17 @@
       from { transform: scale(0.8); opacity: 0; }
       to { transform: scale(1); opacity: 1; }
     }
-
+    .gallery-item.landscape img {
+      padding: 0 !important;
+      margin: 0 !important;
+      background: transparent !important;
+      object-fit: contain !important;
+    }
+    .gallery-item.landscape {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
     footer {
       text-align: center;
       padding: 1rem 0 1.5rem 0;
