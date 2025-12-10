@@ -58,7 +58,7 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.09);
     }
 
-    /* 横图所在卡片 */
+    /* 横图所在的卡片本身：居中摆放 */
     .gallery-item.landscape {
       grid-column: span 1;
       max-width: min(50vw, 640px);
@@ -66,8 +66,7 @@
       margin: 0 auto;
       display: flex;
       justify-content: center;
-      align-items: flex-start; /* 贴着上边，不垂直居中 */
-      padding: 0;
+      align-items: center;
     }
 
     .gallery-item img {
@@ -76,7 +75,7 @@
       height: auto;
     }
 
-    /* 竖图/方图：裁剪铺满卡片 */
+    /* 竖图/方图：裁剪铺满卡片，带一点内边距和灰底 */
     .gallery-item:not(.landscape) img {
       min-height: 320px;
       max-height: 360px;
@@ -86,7 +85,7 @@
       background: #f7f7f7;
     }
 
-    /* 横图：去掉 padding 和背景，不改图片本身大小 */
+    /* 横图：完全去掉内边距和背景，不改变原始大小 */
     .gallery-item.landscape img {
       padding: 0 !important;
       margin: 0 !important;
@@ -167,7 +166,7 @@
     }
   </style>
 </head>
-
+  
 <body>
   <header>
     <h1>Image Gallery</h1>
