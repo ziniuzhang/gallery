@@ -49,11 +49,22 @@
       overflow: hidden;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
       transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
+      cursor: pointer;
     }
 
     .gallery-item:hover {
       transform: translateY(-3px);
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.09);
+    }
+
+    .gallery-item.landscape {
+      grid-column: span 2;
+    }
+
+    @media (max-width: 600px) {
+      .gallery-item.landscape {
+        grid-column: span 1;
+      }
     }
 
     .gallery-item img {
@@ -63,21 +74,58 @@
     }
 
     .caption {
-      padding: 0.55rem 0.75rem 0.7rem 0.75rem;
-      font-size: 0.9rem;
-      color: #444444;
+      display: none;
     }
 
-    .caption span {
-      display: block;
-      font-weight: 600;
-      margin-bottom: 0.1rem;
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      animation: fadeIn 0.3s;
     }
 
-    .caption small {
-      display: block;
-      font-size: 0.8rem;
-      color: #777777;
+    .modal.active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-content {
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: contain;
+      animation: zoomIn 0.3s;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: #f1f1f1;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    .modal-close:hover {
+      color: #fff;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
     }
 
     footer {
@@ -931,5 +979,73 @@
   <footer>
     Gallery &copy; 2025
   </footer>
+
+  <!-- Modal for full-size image -->
+  <div id="imageModal" class="modal">
+    <span class="modal-close">&times;</span>
+    <img class="modal-content" id="modalImage">
+  </div>
+
+  <script>
+    // Detect landscape images and make them wider
+    document.addEventListener('DOMContentLoaded', function() {
+      const galleryItems = document.querySelectorAll('.gallery-item img');
+      
+      galleryItems.forEach(function(img) {
+        img.addEventListener('load', function() {
+          const item = img.closest('.gallery-item');
+          // If image is wider than it is tall, add landscape class
+          if (img.naturalWidth > img.naturalHeight) {
+            item.classList.add('landscape');
+          }
+        });
+        
+        // If image is already loaded
+        if (img.complete) {
+          const item = img.closest('.gallery-item');
+          if (img.naturalWidth > img.naturalHeight) {
+            item.classList.add('landscape');
+          }
+        }
+      });
+    });
+
+    // Modal functionality
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    const closeBtn = document.querySelector('.modal-close');
+    const galleryItems = document.querySelectorAll('.gallery-item img');
+
+    // Open modal when clicking on any gallery image
+    galleryItems.forEach(function(img) {
+      img.addEventListener('click', function() {
+        modal.classList.add('active');
+        modalImg.src = this.src;
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+      });
+    });
+
+    // Close modal when clicking the X
+    closeBtn.addEventListener('click', function() {
+      modal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    });
+
+    // Close modal when clicking outside the image
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+    });
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+    });
+  </script>
 </body>
 </html>
