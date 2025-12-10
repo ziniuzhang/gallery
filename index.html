@@ -59,8 +59,8 @@
     }
 
     .gallery-item.landscape {
-      grid-column: span 2;
-      max-width: 100%;
+      grid-column: span 1;
+      max-width: min(50vw, 640px);
       justify-self: center;
       margin: 0 auto;
     }
@@ -80,6 +80,9 @@
     .gallery-item:not(.landscape) img {
       min-height: 380px;
       object-fit: cover;
+      padding: 10px;
+      box-sizing: border-box;
+      background: #f7f7f7;
     }
 
     .caption {
