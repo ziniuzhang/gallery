@@ -4,7 +4,8 @@
   <meta charset="UTF-8" />
   <title>Gallery</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <script src="https://cdn.jsdelivr.net/npm/heic2any@0.0.4/dist/heic2any.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/heic2any@0.0.4/dist/heic2any.min.js" 
+          onerror="this.onerror=null; this.src='https://unpkg.com/heic2any@0.0.4/dist/heic2any.min.js';"></script>
   <style>
     body {
       margin: 0;
@@ -142,7 +143,7 @@
 
       <!-- Item 4 - HEIC 文件 -->
       <figure class="gallery-item">
-        <img src="figures/sample.HEIC" alt="Sample HEIC image" />
+        <img data-src="figures/sample.HEIC" alt="Sample HEIC image" />
         <figcaption class="caption">
           <span>Sample</span>
           <small>iPhone 拍摄的 HEIC 格式图片</small>
@@ -169,20 +170,32 @@
   <script>
     // 处理 HEIC 文件转换
     function convertHeicToJpeg(img) {
-      const src = img.src;
-      const lowerSrc = src.toLowerCase();
+      // 优先使用 data-src，如果没有则使用 src
+      const originalSrc = img.getAttribute('data-src') || img.getAttribute('src');
+      const lowerSrc = originalSrc.toLowerCase();
       
       // 检查是否是 HEIC 文件
       if (!lowerSrc.endsWith('.heic') && !lowerSrc.endsWith('.heif')) {
-        return;
+        return Promise.resolve(false);
+      }
+
+      // 检查库是否已加载
+      if (typeof heic2any === 'undefined') {
+        console.error('heic2any 库未加载');
+        return Promise.reject(new Error('heic2any 库未加载'));
       }
 
       // 添加加载状态
       img.classList.add('loading');
       
-      // 获取原始文件路径
-      fetch(src)
-        .then(response => response.blob())
+      // 获取原始文件路径并转换
+      return fetch(originalSrc)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('无法获取文件: ' + response.status);
+          }
+          return response.blob();
+        })
         .then(blob => {
           // 使用 heic2any 转换
           return heic2any({
@@ -194,36 +207,75 @@
         .then(conversionResult => {
           // heic2any 可能返回数组或单个 blob
           const blob = Array.isArray(conversionResult) ? conversionResult[0] : conversionResult;
-          const url = URL.createObjectURL(blob);
-          img.src = url;
-          img.classList.remove('loading');
+          if (blob) {
+            const url = URL.createObjectURL(blob);
+            img.src = url;
+            img.classList.remove('loading');
+            img.onerror = null; // 清除错误处理器
+            return true;
+          } else {
+            throw new Error('转换结果为空');
+          }
         })
         .catch(error => {
           console.error('HEIC 转换失败:', error);
           img.classList.remove('loading');
           img.alt = '无法加载图片 (HEIC 格式)';
+          throw error;
         });
     }
 
-    // 页面加载完成后处理所有图片
-    document.addEventListener('DOMContentLoaded', function() {
+    // 等待库和页面都加载完成
+    function initHeicConversion() {
+      // 检查库是否已加载
+      if (typeof heic2any === 'undefined') {
+        console.warn('等待 heic2any 库加载...');
+        setTimeout(initHeicConversion, 100);
+        return;
+      }
+
       const images = document.querySelectorAll('.gallery-item img');
       images.forEach(img => {
-        // 如果图片加载失败，尝试转换 HEIC
-        img.addEventListener('error', function() {
-          const src = this.src.toLowerCase();
-          if (src.endsWith('.heic') || src.endsWith('.heif')) {
-            convertHeicToJpeg(this);
+        // 优先使用 data-src，如果没有则使用 src
+        const originalSrc = img.getAttribute('data-src') || img.getAttribute('src');
+        const lowerSrc = originalSrc.toLowerCase();
+        
+        // 检查是否是 HEIC 文件
+        if (lowerSrc.endsWith('.heic') || lowerSrc.endsWith('.heif')) {
+          // 如果使用 data-src，先不设置 src，避免浏览器尝试加载
+          if (img.hasAttribute('data-src')) {
+            img.style.display = 'none';
           }
-        });
-
-        // 检查是否是 HEIC 文件，如果是则直接转换
-        const src = img.src.toLowerCase();
-        if (src.endsWith('.heic') || src.endsWith('.heif')) {
-          convertHeicToJpeg(img);
+          
+          // 立即开始转换
+          convertHeicToJpeg(img)
+            .then(() => {
+              img.style.display = 'block';
+            })
+            .catch((error) => {
+              img.style.display = 'block';
+              console.error('转换失败:', error);
+            });
+        } else {
+          // 对于非 HEIC 文件，如果使用 data-src，则设置 src
+          if (img.hasAttribute('data-src')) {
+            img.src = originalSrc;
+          }
+          // 如果加载失败也处理
+          img.addEventListener('error', function() {
+            console.warn('图片加载失败:', this.src);
+          });
         }
       });
-    });
+    }
+
+    // 页面加载完成后处理所有图片
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initHeicConversion);
+    } else {
+      // DOM 已经加载完成
+      initHeicConversion();
+    }
   </script>
 </body>
 </html>
