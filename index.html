@@ -4,8 +4,6 @@
   <meta charset="UTF-8" />
   <title>Gallery</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <script src="https://cdn.jsdelivr.net/npm/heic2any@0.0.4/dist/heic2any.min.js" 
-          onerror="this.onerror=null; this.src='https://unpkg.com/heic2any@0.0.4/dist/heic2any.min.js';"></script>
   <style>
     body {
       margin: 0;
@@ -64,22 +62,6 @@
       height: auto;
     }
 
-    .gallery-item img.loading {
-      opacity: 0.5;
-      background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-      background-size: 200% 100%;
-      animation: loading 1.5s ease-in-out infinite;
-    }
-
-    @keyframes loading {
-      0% {
-        background-position: 200% 0;
-      }
-      100% {
-        background-position: -200% 0;
-      }
-    }
-
     .caption {
       padding: 0.55rem 0.75rem 0.7rem 0.75rem;
       font-size: 0.9rem;
@@ -111,172 +93,843 @@
     <h1>Image Gallery</h1>
     <p>Images are loaded from the <code>figures/</code> directory.</p>
   </header>
-
   <main>
-    <div class="gallery">
-      <!-- Item 1 -->
-      <figure class="gallery-item">
-        <img src="figures/pic1.jpg" alt="Sample image 1" />
-        <figcaption class="caption">
-          <span>Sample image 1</span>
-          <small>Short description for pic1.</small>
-        </figcaption>
-      </figure>
 
-      <!-- Item 2 -->
-      <figure class="gallery-item">
-        <img src="figures/pic2.jpg" alt="Sample image 2" />
-        <figcaption class="caption">
-          <span>Sample image 2</span>
-          <small>Short description for pic2.</small>
-        </figcaption>
-      </figure>
+    <!-- Section 2024 -->
+    <section style="margin-bottom: 2.5rem;">
+      <h2 style="text-align: center; margin-bottom: 0.5rem;">Year 2024</h2>
+      <p style="text-align: center; max-width: 700px; margin: 0 auto 1.2rem auto; color: #555;">
+        Here you can add some brief notes about this year. 
+        You can describe events, themes, or anything you want before showing the images.
+      </p>
+  
+      <div class="gallery">
+        <figure class="gallery-item">
+          <img src="figures/2024/1001765346396_.pic.jpg" alt="2024 image 1">
+          <figcaption class="caption">
+            <span>2024 Image 1</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
 
-      <!-- Item 3 -->
-      <figure class="gallery-item">
-        <img src="figures/pic3.jpg" alt="Sample image 3" />
-        <figcaption class="caption">
-          <span>Sample image 3</span>
-          <small>Short description for pic3.</small>
-        </figcaption>
-      </figure>
+        <figure class="gallery-item">
+          <img src="figures/2024/1011765346399_.pic.jpg" alt="2024 image 2">
+          <figcaption class="caption">
+            <span>2024 Image 2</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
 
-      <!-- Item 4 - HEIC 文件 -->
-      <figure class="gallery-item">
-        <img data-src="figures/sample.HEIC" alt="Sample HEIC image" />
-        <figcaption class="caption">
-          <span>Sample</span>
-          <small>iPhone 拍摄的 HEIC 格式图片</small>
-        </figcaption>
-      </figure>
+        <figure class="gallery-item">
+          <img src="figures/2024/1021765346402_.pic.jpg" alt="2024 image 3">
+          <figcaption class="caption">
+            <span>2024 Image 3</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
 
-      <!-- You can copy this block and change filenames and captions -->
-      <!--
-      <figure class="gallery-item">
-        <img src="figures/your_image_name.jpg" alt="Description" />
-        <figcaption class="caption">
-          <span>Title</span>
-          <small>Short description.</small>
-        </figcaption>
-      </figure>
-      -->
-    </div>
+        <figure class="gallery-item">
+          <img src="figures/2024/1031765346405_.pic.jpg" alt="2024 image 4">
+          <figcaption class="caption">
+            <span>2024 Image 4</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/1041765346408_.pic.jpg" alt="2024 image 5">
+          <figcaption class="caption">
+            <span>2024 Image 5</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/1051765346410_.pic.jpg" alt="2024 image 6">
+          <figcaption class="caption">
+            <span>2024 Image 6</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/1061765346412_.pic.jpg" alt="2024 image 7">
+          <figcaption class="caption">
+            <span>2024 Image 7</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/1071765346415_.pic.jpg" alt="2024 image 8">
+          <figcaption class="caption">
+            <span>2024 Image 8</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/1081765346424_.pic.jpg" alt="2024 image 9">
+          <figcaption class="caption">
+            <span>2024 Image 9</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/1091765346426_.pic.jpg" alt="2024 image 10">
+          <figcaption class="caption">
+            <span>2024 Image 10</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/1101765346428_.pic.jpg" alt="2024 image 11">
+          <figcaption class="caption">
+            <span>2024 Image 11</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/1111765346429_.pic.jpg" alt="2024 image 12">
+          <figcaption class="caption">
+            <span>2024 Image 12</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/1121765346431_.pic.jpg" alt="2024 image 13">
+          <figcaption class="caption">
+            <span>2024 Image 13</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/1131765346432_.pic.jpg" alt="2024 image 14">
+          <figcaption class="caption">
+            <span>2024 Image 14</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/1141765346434_.pic.jpg" alt="2024 image 15">
+          <figcaption class="caption">
+            <span>2024 Image 15</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/1151765346437_.pic.jpg" alt="2024 image 16">
+          <figcaption class="caption">
+            <span>2024 Image 16</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/1161765346439_.pic.jpg" alt="2024 image 17">
+          <figcaption class="caption">
+            <span>2024 Image 17</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/1171765346440_.pic.jpg" alt="2024 image 18">
+          <figcaption class="caption">
+            <span>2024 Image 18</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/1181765346442_.pic.jpg" alt="2024 image 19">
+          <figcaption class="caption">
+            <span>2024 Image 19</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/1191765346444_.pic.jpg" alt="2024 image 20">
+          <figcaption class="caption">
+            <span>2024 Image 20</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/1201765346445_.pic.jpg" alt="2024 image 21">
+          <figcaption class="caption">
+            <span>2024 Image 21</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/221765346208_.pic.jpg" alt="2024 image 22">
+          <figcaption class="caption">
+            <span>2024 Image 22</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/231765346212_.pic.jpg" alt="2024 image 23">
+          <figcaption class="caption">
+            <span>2024 Image 23</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/241765346213_.pic.jpg" alt="2024 image 24">
+          <figcaption class="caption">
+            <span>2024 Image 24</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/251765346215_.pic.jpg" alt="2024 image 25">
+          <figcaption class="caption">
+            <span>2024 Image 25</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/261765346217_.pic.jpg" alt="2024 image 26">
+          <figcaption class="caption">
+            <span>2024 Image 26</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/271765346219_.pic.jpg" alt="2024 image 27">
+          <figcaption class="caption">
+            <span>2024 Image 27</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/281765346222_.pic.jpg" alt="2024 image 28">
+          <figcaption class="caption">
+            <span>2024 Image 28</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/291765346225_.pic.jpg" alt="2024 image 29">
+          <figcaption class="caption">
+            <span>2024 Image 29</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/301765346227_.pic.jpg" alt="2024 image 30">
+          <figcaption class="caption">
+            <span>2024 Image 30</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/311765346232_.pic.jpg" alt="2024 image 31">
+          <figcaption class="caption">
+            <span>2024 Image 31</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/321765346235_.pic.jpg" alt="2024 image 32">
+          <figcaption class="caption">
+            <span>2024 Image 32</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/331765346239_.pic.jpg" alt="2024 image 33">
+          <figcaption class="caption">
+            <span>2024 Image 33</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/341765346242_.pic.jpg" alt="2024 image 34">
+          <figcaption class="caption">
+            <span>2024 Image 34</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/351765346245_.pic.jpg" alt="2024 image 35">
+          <figcaption class="caption">
+            <span>2024 Image 35</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/361765346247_.pic.jpg" alt="2024 image 36">
+          <figcaption class="caption">
+            <span>2024 Image 36</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/371765346248_.pic.jpg" alt="2024 image 37">
+          <figcaption class="caption">
+            <span>2024 Image 37</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/381765346250_.pic.jpg" alt="2024 image 38">
+          <figcaption class="caption">
+            <span>2024 Image 38</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/391765346262_.pic.jpg" alt="2024 image 39">
+          <figcaption class="caption">
+            <span>2024 Image 39</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/401765346264_.pic.jpg" alt="2024 image 40">
+          <figcaption class="caption">
+            <span>2024 Image 40</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/411765346266_.pic.jpg" alt="2024 image 41">
+          <figcaption class="caption">
+            <span>2024 Image 41</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/421765346268_.pic.jpg" alt="2024 image 42">
+          <figcaption class="caption">
+            <span>2024 Image 42</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/431765346270_.pic.jpg" alt="2024 image 43">
+          <figcaption class="caption">
+            <span>2024 Image 43</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/441765346271_.pic.jpg" alt="2024 image 44">
+          <figcaption class="caption">
+            <span>2024 Image 44</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/451765346273_.pic.jpg" alt="2024 image 45">
+          <figcaption class="caption">
+            <span>2024 Image 45</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/461765346275_.pic.jpg" alt="2024 image 46">
+          <figcaption class="caption">
+            <span>2024 Image 46</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/471765346276_.pic.jpg" alt="2024 image 47">
+          <figcaption class="caption">
+            <span>2024 Image 47</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/481765346278_.pic.jpg" alt="2024 image 48">
+          <figcaption class="caption">
+            <span>2024 Image 48</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/491765346280_.pic.jpg" alt="2024 image 49">
+          <figcaption class="caption">
+            <span>2024 Image 49</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/501765346282_.pic.jpg" alt="2024 image 50">
+          <figcaption class="caption">
+            <span>2024 Image 50</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/511765346284_.pic.jpg" alt="2024 image 51">
+          <figcaption class="caption">
+            <span>2024 Image 51</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/521765346285_.pic.jpg" alt="2024 image 52">
+          <figcaption class="caption">
+            <span>2024 Image 52</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/531765346287_.pic.jpg" alt="2024 image 53">
+          <figcaption class="caption">
+            <span>2024 Image 53</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/541765346289_.pic.jpg" alt="2024 image 54">
+          <figcaption class="caption">
+            <span>2024 Image 54</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/551765346294_.pic.jpg" alt="2024 image 55">
+          <figcaption class="caption">
+            <span>2024 Image 55</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/561765346295_.pic.jpg" alt="2024 image 56">
+          <figcaption class="caption">
+            <span>2024 Image 56</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/571765346297_.pic.jpg" alt="2024 image 57">
+          <figcaption class="caption">
+            <span>2024 Image 57</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/581765346299_.pic.jpg" alt="2024 image 58">
+          <figcaption class="caption">
+            <span>2024 Image 58</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/591765346301_.pic.jpg" alt="2024 image 59">
+          <figcaption class="caption">
+            <span>2024 Image 59</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/601765346303_.pic.jpg" alt="2024 image 60">
+          <figcaption class="caption">
+            <span>2024 Image 60</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/611765346304_.pic.jpg" alt="2024 image 61">
+          <figcaption class="caption">
+            <span>2024 Image 61</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/621765346306_.pic.jpg" alt="2024 image 62">
+          <figcaption class="caption">
+            <span>2024 Image 62</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/631765346308_.pic.jpg" alt="2024 image 63">
+          <figcaption class="caption">
+            <span>2024 Image 63</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/641765346310_.pic.jpg" alt="2024 image 64">
+          <figcaption class="caption">
+            <span>2024 Image 64</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/651765346312_.pic.jpg" alt="2024 image 65">
+          <figcaption class="caption">
+            <span>2024 Image 65</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/661765346313_.pic.jpg" alt="2024 image 66">
+          <figcaption class="caption">
+            <span>2024 Image 66</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/671765346315_.pic.jpg" alt="2024 image 67">
+          <figcaption class="caption">
+            <span>2024 Image 67</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/681765346317_.pic.jpg" alt="2024 image 68">
+          <figcaption class="caption">
+            <span>2024 Image 68</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/691765346319_.pic.jpg" alt="2024 image 69">
+          <figcaption class="caption">
+            <span>2024 Image 69</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/701765346321_.pic.jpg" alt="2024 image 70">
+          <figcaption class="caption">
+            <span>2024 Image 70</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/711765346323_.pic.jpg" alt="2024 image 71">
+          <figcaption class="caption">
+            <span>2024 Image 71</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/721765346325_.pic.jpg" alt="2024 image 72">
+          <figcaption class="caption">
+            <span>2024 Image 72</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/731765346326_.pic.jpg" alt="2024 image 73">
+          <figcaption class="caption">
+            <span>2024 Image 73</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/741765346328_.pic.jpg" alt="2024 image 74">
+          <figcaption class="caption">
+            <span>2024 Image 74</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/751765346330_.pic.jpg" alt="2024 image 75">
+          <figcaption class="caption">
+            <span>2024 Image 75</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/761765346332_.pic.jpg" alt="2024 image 76">
+          <figcaption class="caption">
+            <span>2024 Image 76</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/771765346334_.pic.jpg" alt="2024 image 77">
+          <figcaption class="caption">
+            <span>2024 Image 77</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/781765346336_.pic.jpg" alt="2024 image 78">
+          <figcaption class="caption">
+            <span>2024 Image 78</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/791765346337_.pic.jpg" alt="2024 image 79">
+          <figcaption class="caption">
+            <span>2024 Image 79</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/801765346340_.pic.jpg" alt="2024 image 80">
+          <figcaption class="caption">
+            <span>2024 Image 80</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/811765346342_.pic.jpg" alt="2024 image 81">
+          <figcaption class="caption">
+            <span>2024 Image 81</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/821765346344_.pic.jpg" alt="2024 image 82">
+          <figcaption class="caption">
+            <span>2024 Image 82</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/831765346346_.pic.jpg" alt="2024 image 83">
+          <figcaption class="caption">
+            <span>2024 Image 83</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/841765346348_.pic.jpg" alt="2024 image 84">
+          <figcaption class="caption">
+            <span>2024 Image 84</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/851765346349_.pic.jpg" alt="2024 image 85">
+          <figcaption class="caption">
+            <span>2024 Image 85</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/861765346351_.pic.jpg" alt="2024 image 86">
+          <figcaption class="caption">
+            <span>2024 Image 86</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/871765346353_.pic.jpg" alt="2024 image 87">
+          <figcaption class="caption">
+            <span>2024 Image 87</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/881765346355_.pic.jpg" alt="2024 image 88">
+          <figcaption class="caption">
+            <span>2024 Image 88</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/891765346357_.pic.jpg" alt="2024 image 89">
+          <figcaption class="caption">
+            <span>2024 Image 89</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/901765346358_.pic.jpg" alt="2024 image 90">
+          <figcaption class="caption">
+            <span>2024 Image 90</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/911765346361_.pic.jpg" alt="2024 image 91">
+          <figcaption class="caption">
+            <span>2024 Image 91</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/921765346369_.pic.jpg" alt="2024 image 92">
+          <figcaption class="caption">
+            <span>2024 Image 92</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/931765346370_.pic.jpg" alt="2024 image 93">
+          <figcaption class="caption">
+            <span>2024 Image 93</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/941765346378_.pic.jpg" alt="2024 image 94">
+          <figcaption class="caption">
+            <span>2024 Image 94</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/951765346383_.pic.jpg" alt="2024 image 95">
+          <figcaption class="caption">
+            <span>2024 Image 95</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/961765346385_.pic.jpg" alt="2024 image 96">
+          <figcaption class="caption">
+            <span>2024 Image 96</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/971765346386_.pic.jpg" alt="2024 image 97">
+          <figcaption class="caption">
+            <span>2024 Image 97</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/981765346392_.pic.jpg" alt="2024 image 98">
+          <figcaption class="caption">
+            <span>2024 Image 98</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="figures/2024/991765346394_.pic.jpg" alt="2024 image 99">
+          <figcaption class="caption">
+            <span>2024 Image 99</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+  
+  
+    <!-- Section 2023 -->
+    <section style="margin-bottom: 2.5rem;">
+      <h2 style="text-align: center; margin-bottom: 0.5rem;">Year 2023</h2>
+      <p style="text-align: center; max-width: 700px; margin: 0 auto 1.2rem auto; color: #555;">
+        You can add text here as well. This section can summarize 2023, then show images below.
+      </p>
+  
+      <div class="gallery">
+        <figure class="gallery-item">
+          <img src="figures/2023_pic1.jpg" alt="2023 image 1">
+          <figcaption class="caption">
+            <span>2023 Image 1</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+  
+        <figure class="gallery-item">
+          <img src="figures/2023_pic2.jpg" alt="2023 image 2">
+          <figcaption class="caption">
+            <span>2023 Image 2</span>
+            <small>Short description.</small>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+  
   </main>
+  
 
   <footer>
     Gallery &copy; 2025
   </footer>
-
-  <script>
-    // 处理 HEIC 文件转换
-    function convertHeicToJpeg(img) {
-      // 优先使用 data-src，如果没有则使用 src
-      const originalSrc = img.getAttribute('data-src') || img.getAttribute('src');
-      const lowerSrc = originalSrc.toLowerCase();
-      
-      // 检查是否是 HEIC 文件
-      if (!lowerSrc.endsWith('.heic') && !lowerSrc.endsWith('.heif')) {
-        return Promise.resolve(false);
-      }
-
-      // 检查库是否已加载
-      if (typeof heic2any === 'undefined') {
-        console.error('heic2any 库未加载');
-        return Promise.reject(new Error('heic2any 库未加载'));
-      }
-
-      // 添加加载状态
-      img.classList.add('loading');
-      
-      // 获取原始文件路径并转换
-      return fetch(originalSrc)
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('无法获取文件: ' + response.status);
-          }
-          return response.blob();
-        })
-        .then(blob => {
-          // 使用 heic2any 转换
-          return heic2any({
-            blob: blob,
-            toType: 'image/jpeg',
-            quality: 0.92
-          });
-        })
-        .then(conversionResult => {
-          // heic2any 可能返回数组或单个 blob
-          const blob = Array.isArray(conversionResult) ? conversionResult[0] : conversionResult;
-          if (blob) {
-            const url = URL.createObjectURL(blob);
-            img.src = url;
-            img.classList.remove('loading');
-            img.onerror = null; // 清除错误处理器
-            return true;
-          } else {
-            throw new Error('转换结果为空');
-          }
-        })
-        .catch(error => {
-          console.error('HEIC 转换失败:', error);
-          img.classList.remove('loading');
-          img.alt = '无法加载图片 (HEIC 格式)';
-          throw error;
-        });
-    }
-
-    // 等待库和页面都加载完成
-    function initHeicConversion() {
-      // 检查库是否已加载
-      if (typeof heic2any === 'undefined') {
-        console.warn('等待 heic2any 库加载...');
-        setTimeout(initHeicConversion, 100);
-        return;
-      }
-
-      const images = document.querySelectorAll('.gallery-item img');
-      images.forEach(img => {
-        // 优先使用 data-src，如果没有则使用 src
-        const originalSrc = img.getAttribute('data-src') || img.getAttribute('src');
-        const lowerSrc = originalSrc.toLowerCase();
-        
-        // 检查是否是 HEIC 文件
-        if (lowerSrc.endsWith('.heic') || lowerSrc.endsWith('.heif')) {
-          // 如果使用 data-src，先不设置 src，避免浏览器尝试加载
-          if (img.hasAttribute('data-src')) {
-            img.style.display = 'none';
-          }
-          
-          // 立即开始转换
-          convertHeicToJpeg(img)
-            .then(() => {
-              img.style.display = 'block';
-            })
-            .catch((error) => {
-              img.style.display = 'block';
-              console.error('转换失败:', error);
-            });
-        } else {
-          // 对于非 HEIC 文件，如果使用 data-src，则设置 src
-          if (img.hasAttribute('data-src')) {
-            img.src = originalSrc;
-          }
-          // 如果加载失败也处理
-          img.addEventListener('error', function() {
-            console.warn('图片加载失败:', this.src);
-          });
-        }
-      });
-    }
-
-    // 页面加载完成后处理所有图片
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initHeicConversion);
-    } else {
-      // DOM 已经加载完成
-      initHeicConversion();
-    }
-  </script>
 </body>
 </html>
-
