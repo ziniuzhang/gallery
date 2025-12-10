@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <title>Gallery</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://cdn.jsdelivr.net/npm/heic2any@0.0.4/dist/heic2any.min.js"></script>
   <style>
     body {
       margin: 0;
@@ -60,6 +61,22 @@
       display: block;
       width: 100%;
       height: auto;
+    }
+
+    .gallery-item img.loading {
+      opacity: 0.5;
+      background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+      background-size: 200% 100%;
+      animation: loading 1.5s ease-in-out infinite;
+    }
+
+    @keyframes loading {
+      0% {
+        background-position: 200% 0;
+      }
+      100% {
+        background-position: -200% 0;
+      }
     }
 
     .caption {
@@ -123,6 +140,15 @@
         </figcaption>
       </figure>
 
+      <!-- Item 4 - HEIC 文件 -->
+      <figure class="gallery-item">
+        <img src="figures/sample.HEIC" alt="Sample HEIC image" />
+        <figcaption class="caption">
+          <span>Sample</span>
+          <small>iPhone 拍摄的 HEIC 格式图片</small>
+        </figcaption>
+      </figure>
+
       <!-- You can copy this block and change filenames and captions -->
       <!--
       <figure class="gallery-item">
@@ -139,6 +165,66 @@
   <footer>
     Gallery &copy; 2025
   </footer>
+
+  <script>
+    // 处理 HEIC 文件转换
+    function convertHeicToJpeg(img) {
+      const src = img.src;
+      const lowerSrc = src.toLowerCase();
+      
+      // 检查是否是 HEIC 文件
+      if (!lowerSrc.endsWith('.heic') && !lowerSrc.endsWith('.heif')) {
+        return;
+      }
+
+      // 添加加载状态
+      img.classList.add('loading');
+      
+      // 获取原始文件路径
+      fetch(src)
+        .then(response => response.blob())
+        .then(blob => {
+          // 使用 heic2any 转换
+          return heic2any({
+            blob: blob,
+            toType: 'image/jpeg',
+            quality: 0.92
+          });
+        })
+        .then(conversionResult => {
+          // heic2any 可能返回数组或单个 blob
+          const blob = Array.isArray(conversionResult) ? conversionResult[0] : conversionResult;
+          const url = URL.createObjectURL(blob);
+          img.src = url;
+          img.classList.remove('loading');
+        })
+        .catch(error => {
+          console.error('HEIC 转换失败:', error);
+          img.classList.remove('loading');
+          img.alt = '无法加载图片 (HEIC 格式)';
+        });
+    }
+
+    // 页面加载完成后处理所有图片
+    document.addEventListener('DOMContentLoaded', function() {
+      const images = document.querySelectorAll('.gallery-item img');
+      images.forEach(img => {
+        // 如果图片加载失败，尝试转换 HEIC
+        img.addEventListener('error', function() {
+          const src = this.src.toLowerCase();
+          if (src.endsWith('.heic') || src.endsWith('.heif')) {
+            convertHeicToJpeg(this);
+          }
+        });
+
+        // 检查是否是 HEIC 文件，如果是则直接转换
+        const src = img.src.toLowerCase();
+        if (src.endsWith('.heic') || src.endsWith('.heif')) {
+          convertHeicToJpeg(img);
+        }
+      });
+    });
+  </script>
 </body>
 </html>
 
